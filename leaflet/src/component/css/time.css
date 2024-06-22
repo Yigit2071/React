@@ -1,0 +1,20 @@
+.time-container {
+
+    display: flex;
+    position: fixed;
+    right: 20px;
+    top: 280px;
+
+    height: 7vh;
+    background-color: white;
+}
+
+.current-time {
+    background-color: #000102;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

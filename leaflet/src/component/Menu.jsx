@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import LocationMarker, { droneLocations } from "./LocationMarker";
-import "./dropdown.css"
+import "./css/dropdown.css"
+import Button from "./Button.jsx"
+import TimeComponent from "./TimeComponent.jsx";
 
 
-function Menu() {
+function Menu({ alert, onToggle }) {
     const [isOpen, setIsOpen] = useState(false);
+
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -13,20 +16,26 @@ function Menu() {
     return (
         <div className="dropdown">
             <button onClick={toggleDropdown} className="dropdown-toggle">
-                Dropdown Menü
+                Flight Controller Menu
             </button>
-            {isOpen && (
+            {isOpen ? (
                 <ul>{droneLocations.map((drone) => (
 
-                    <li key={drone.id}> drone id: {drone.id} <br />
+                    <h3 key={drone.id}> drone id: {drone.id} <br />
                         Latitude: {drone.lat} <br />
                         Longitude: {drone.lat}
 
-                    </li>))}
-
+                    </h3>))}
+                    <Button
+                        alert={alert}
+                        onToggle={onToggle}
+                    />
+                    <TimeComponent />
 
                 </ul>
-            )}
+            ) : null}
+
+
         </div>
     );
 }
