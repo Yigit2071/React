@@ -1,6 +1,6 @@
 /* Temel stil */
 .dropdown {
-    position: absolute;
+    position: fixed;
     top: 20px;
     /* İstediğiniz yüksekliği ayarlayabilirsiniz */
     right: 20px;
@@ -17,7 +17,7 @@
 
 .dropdown-menu {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #fff;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
